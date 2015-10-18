@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <link rel="icon" type = "image/png" href="images/icon.png" />
+  <title>Food Porn</title>
+  <meta charset = "utf-8"> 
+  <link rel="stylesheet" type = "text/css" href = "css/font-awesome/css/font-awesome.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href="css/docs.css" rel = "stylesheet"/>
+  <script src = "js/jquery.js"></script>
+  <script src = "js/bootstrap.js"></script>
+  <script src = "js/application.js"></script>
+</head>
+<body data-spy="scroll" data-target="#collapse navbar-collapse"> 
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#">Home</a>
+      </div>
+      <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav" role = "tablist">
+                <li><a href="#search">Search</a></li>
+                <li><a href="#contactinformation">Contact Us</a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class = "jumbotron">
+    <h1 class = "text-center">Food Porn</h1>
+    <h3>
+      <p class = "text-center">find the best food at the best places.</p>
+    </h3>
+  </div>  
+  <div class = "container-fluid" id="search">
+    <div class = "page-header">
+      <h1 class = "text-center">Search</h1>
+      <h3>
+        <p class = "text-center">paste the url of an image of a food you're craving.</p>
+      </h3>
+    </div>
+    <form role="form">
+      <div class="form-group">
+        <label>url:</label>
+        <input type="url" class="form-control" id="url" name="url"></label>
+  </div>  
+  <div class = "container-fluid" id = "contactinformation">
+    <div class = "page-header">
+      <h1 class = "text-center">Comments, Suggestions, Questions...</h1>
+    </div>
+    <form role="form" action = "main.php" method = "POST">
+      <div class = "form-group">
+        <label for = "fname">First Name:</label>
+        <input type = "fname" class = "form-control" id = "fname" name = "fname"></label>
+      </div>
+      <div class = "form-group">
+        <label for = "lname">Last Name:</label>
+        <input type = "lname" class = "form-control" id = "lname" name = "lname"></label>
+      </div>
+      <div class = "form-group">
+        <label for = "email">Email address:</label>
+          <input type = "email" class = "form-control" id = "email" name = "email">
+      </div>
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment" name = "comment"></textarea>
+      </div>
+      <button class="btn btn-info btn-lg" data-toggle = "modal" data-target = "#myModal">Submit</button>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submission Confirmed!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          </div>
+        </div>
+    </form> 
+  </div>
+
+<!--BOOTSTRAP AND JAVASCRIPT-->
+      <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript">
+    var sections = $('section')
+      , nav = $('nav')
+      , nav_height = nav.outerHeight();
+
+    $(window).on('scroll', function () {
+      var cur_pos = $(this).scrollTop();
+      
+      sections.each(function() {
+        var top = $(this).offset().top - nav_height,
+            bottom = top + $(this).outerHeight();
+        
+        if (cur_pos >= top && cur_pos <= bottom) {
+          nav.find('a').removeClass('active');
+          sections.removeClass('active');
+          
+          $(this).addClass('active');
+          nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+        }
+      });
+    });
+
+    nav.find('a').on('click', function () {
+      var $el = $(this)
+        , id = $el.attr('href');
+      
+      $('html, body').animate({
+        scrollTop: $(id).offset().top - nav_height
+      }, 500);
+      
+      return false;
+    });
+    </script>
+
+</body> 
+</html>
+    
+    
+    

@@ -1,0 +1,126 @@
+@font-face {
+      font-family: 'BentonSans_L';
+      src: url('/fonts/BS_book.ttf') format('truetype');
+      font-weight: 200;
+      font-style: normal;
+}
+
+@font-face {
+      font-family: 'BentonSans_R';
+      src: url('/fonts/BS_regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+}
+
+@font-face {
+      font-family: 'BentonSans_M';
+      src: url('/fonts/BS_medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  /*font: 400 normal 16px/1.5 Roboto,Helvetica,Arial,sans-serif;*/
+  font-family: 'BentonSans_L',sans-serif !important;
+  /*font-family: 'HelveticaNeue-Light', 'Helvetica Neue Thin', 'Helvetica Neue';  */
+  color: #3d464d;
+}
+a {
+	color: #017aed;
+	text-decoration: underline;
+}
+.navbar a {
+	color: #9FA3A8;
+	text-decoration: none;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav>li>a:focus,.nav>li>a:hover {color: #017aed;text-decoration:none;background-color:transparent;}
+.dropdown-menu>li> a:hover {background-color: #fff; color: #017aed;}
+.navbar {
+  background-color: #fbfcfd;
+  border-color: #ddd;
+}
+.navbar-brand {
+	height: 70px;
+}
+.jumbotron {
+	background-color: #017aed;
+	text-align: center;
+}
+.navbar-form, .navbar-nav {
+  padding-top: 20px;
+}
+.jumbotron {
+	color: #fff;
+	font-weight: 100;
+}
+.jumbotron h1 {
+  	font-family: "BentonSans", 'Open Sans', sans-serif;
+  	/*font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue';  */
+	font-size: 48px;
+}
+.jumbotron .sub-text {
+  	font-family: "BentonSans", 'Open Sans', sans-serif;
+	/*font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue';  */
+	font-size: 28px;
+	letter-spacing: 1px;
+}
+.jumbotron p {
+	height: 50px;
+	font-size: 14px;
+}
+.get-started {
+	height: 30px;
+	font-size: 13px;
+	width: 170px;
+	background-color: #fff;
+	color: #017aed;
+	margin-right: 20px;
+	border: 0px;
+}
+.get-started-2d9cf5{
+	background-color: #017aed;
+	color: #fff;
+	margin-right: 0px;
+}
+.home-sdk-icons img {
+	height: 80px;
+}
+.sdk-intro-section {
+	padding-top: 50px;
+}
+.sdk-intro-section h2 {
+  	font-weight: 200;
+	font-size: 28px;
+	color: #017aed !important;
+	letter-spacing: 1px;
+	border-top: 0px !important;
+	padding: 0px !important;
+	margin: 20px !important;
+}
+.why-moxtra-section {
+	padding-top: 40px;
+}
+.why-moxtra-section h2{
+  	  font-family: "BentonSans", 'Open Sans', sans-serif;
+/*font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue';  */
+	font-size: 48px;
+	color: #017aed;
+	letter-spacing: 1px;
+}
+.padding-40 {
+	padding: 40px;
+}
+footer p span{
+	font-size: 12px;
+	font-weight: 200;
+}
+.footer-separator {
+	color: #ccc;
+}
+.footer-left {
+	float: left;
+}
+.footer-right {
+	float: right;
+}
