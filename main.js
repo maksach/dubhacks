@@ -9,6 +9,7 @@
 (function()
 {
 	var clarifai;
+	var baseUrl = 'https://api-alpha.clarifai.com/v1/';
 
 	window.onload = function()
 	{
@@ -83,10 +84,35 @@
 		console.log('callback', obj);
 	}
 
-	function carSubmit() 
+	function urlSubmit()
 	{
-		predict($("#new-car").val());
+		getTags($('#url').val());
 	}
+
+    function getTags(url)
+    {
+    	var data = {
+    		"urls": [url]
+    	}
+    	$.ajax(
+    		{	
+	            'type': 'POST',
+	            'contentType': 'application/json; charset=utf-8',
+	            'processData': false,
+	            'data': JSON.stringify(data),
+	            'success': function(data)
+	            {
+	            	console.log(data);
+	            },
+	            'url': this.baseUrl + '/tag/?url=' + url,
+	            'headers': {
+	                'Authorization': 'Bearer ' + 'tYdYLZL5Wv2pnleyjR6KAZlyZkQagE'
+	            }
+    		}
+    	).then(
+    		
+    	);
+    }
 
 }
 )();
