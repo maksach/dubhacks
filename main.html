@@ -1,115 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Moxtra is a contextual communication and collaboration SDK and API for mobile and web apps with modules such as Chat, Draw, Clip and Meet for ios, android, javascript and REST API">
-    <meta name="author" content="Moxtra">
-
-    <title>Food Porn</title>
-
-    <!--STYLES-->
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="/images/favicon.png"/>
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/highlight-styles/default.css">
-    <!-- Custom styles for this template -->
-    <link href="/css/main-dev.css" rel="stylesheet">
-    <link href='/css/main-docs.css' type='text/css' rel='stylesheet' media='all'>
-
-    <style>
-      div.container-fluid {
-        background-color: #fff;
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <%@ include file="/topnav.jsp" %>
-    <div class="jumbotron">
-      <div class="container"> <!--container needs to be extended upward-->
-        <p>&nbsp;&nbsp;&nbsp;</p>
-        <h1></h1>
-        <h3>find the best food at the best places</h3>
+<html lang = "en">
+<head>
+  <title>Foodie</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <meta charset = "utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src = "js/bootstrap.js"></script>
+  <script type="text/javascript" src="clarifai-basic.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</head>
+<body data-spy="scroll" data-target="#collapse navbar-collapse"> 
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="#">Home</a>
       </div>
-    </div>
-    <div class="container-fluid docs-container">
-
-    
-        <div class="inner">
-          <div id="main-content" class="novel docs layout-docs-layout">
-            <h2 class="text-center">Food Search</h2>
-            <p class="text-center">
-              insert the url of an image of what you're craving
-              we'll give you the best places
-            </p>
-            <p class="text-center">
-              <a href="/docs/resources/token" class="btn btn-primary" role="button" target="_blank">Access Token Debugger</a>
-            </p>
-
-          <!--
-          <section>
-            <h2 class="text-center">API Console</h2>
-            <p class="text-center">
-              The API Consoles make it easier for developers to learn and use our API. Featuring an easy-to-use interface, the API Consoles provide a GUI for exploring our API's resources and executing its methods.
-            </p>
-            <p class="text-center">
-              <a href="https://apigee.com/jonathanmi/embed/console/moxtradeveloper" class="btn btn-primary" role="button" target="_blank">Open API Console</a>
-            </p>
-          </section>
-          <section>
-            <h2 class="text-center">JavaScript Code Editor</h2>
-            <p class="text-center">
-              A simple way to learn, test and debug the Moxtra SDK for Javascript. The Moxtra Javascript library is preloaded in the editor.
-            </p>
-            <p class="text-center">
-              <a href="http://jsfiddle.net/qryfrvs5/" class="btn btn-primary" role="button" target="_blank">Open JS Editor</a>
-            </p>
-          </section>
-          <section>
-            <h2 class="text-center">Sample Code</h2>
-            <p class="text-center">
-              To make things as easy as possible, we have created platform-specific code snippets that you can use in your development environment to get up and running quickly.
-            </p>
-            <p class="text-center">
-              You can get your Client ID and Client Secret Key by registering your app here.
-              link "here" to sandbox url
-            </p>
-            <div class="row">
-                <div class="col-xs-6 col-md-3 text-center">
-                    <a href="/docs/resources/sample/js" class="thumbnail" style="padding:20px;" target="_blank">
-                        JavaScript
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-3 text-center">
-                    <a href="/docs/resources/sample/php" class="thumbnail" style="padding:20px;" target="_blank">
-                        PHP
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-3 text-center">
-                    <a href="/docs/resources/sample/python" class="thumbnail" style="padding:20px;" target="_blank">
-                        Python
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-3 text-center">
-                    <a href="https://github.com/Moxtra/Moxtra-Java-Sample-Code" class="thumbnail" target="_blank" style="padding:20px;">
-                        Java
-                    </a>
-                </div>
+      <div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav" role = "tablist">
+                <li><a href="#search">Search</a></li>
+                <li><a href="#contactinformation">Contact Us</a></li>
+              </ul>
             </div>
-          </section>
-          </div>
-        -->
         </div>
-      <hr>
-      <%@ include file="/footer.jsp" %>
-    </div> <!-- /container -->
-    <%@ include file="/scripts.jsp" %>
-  </body>
+    </div>
+</div>
+  <!--
+  <div class = "jumbotron">
+    <h1 class = "text-center">Foodie</h1>
+    <h3>
+      <p class = "text-center">find the best food at the best places.</p>
+    </h3>
+  </div>  
+-->
+
+  <!--CAROUSEL-->
+
+  <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="http://www.shakengolynnwood.com/wp-content/uploads/2015/01/Chicken-Burger2.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Foodie</h1>
+              <p class="lead">find the best food at the best places.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="http://www.antoniospizzaofwestland.com/wp-content/uploads/2015/05/spaghetti-alla-bolonose.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Foodie</h1>
+              <p class="lead">find the best food at the best places.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="http://www.thickslicepizza.com/img/photo3.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Foodie</h1>
+              <p class="lead">find the best food at the best places.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="http://www.farmlib.org/wp-content/uploads/2015/07/plm20ilpgyltaarfswcs1.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Foodie</h1>
+              <p class="lead">find the best food at the best places.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+    </div><!-- /.carousel -->
+
+  <!--END OF CAROUSEL-->
+
+  <div class = "container-fluid" id="search">
+    <div class = "page-header">
+      <h1 class = "text-center">Search</h1>
+      <h3>
+        <p class = "text-center">paste the url of an image of a food you're craving.</p>
+      </h3>
+    </div>
+    <form role="form">
+      <div class="form-group">
+        <label>url:</label>
+        <input type="url" class="form-control" id="url" name="url"></label>
+        <button onclick="urlSubmit()">Submit</button>
+      </div> 
+    </form> 
+  <div class = "container-fluid" id = "contactinformation">
+    <div class = "page-header">
+      <h1 class = "text-center">Comments, Suggestions, Questions...</h1>
+    </div>
+    <form role="form" action = "main.php" method = "POST">
+      <div class = "form-group">
+        <label for = "fname">First Name:</label>
+        <input type = "fname" class = "form-control" id = "fname" name = "fname"></label>
+      </div>
+      <div class = "form-group">
+        <label for = "lname">Last Name:</label>
+        <input type = "lname" class = "form-control" id = "lname" name = "lname"></label>
+      </div>
+      <div class = "form-group">
+        <label for = "email">Email address:</label>
+          <input type = "email" class = "form-control" id = "email" name = "email">
+      </div>
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment" name = "comment"></textarea>
+      </div>
+      <button class="btn btn-info btn-lg" data-toggle = "modal" data-target = "#myModal">Submit</button>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submission Confirmed!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          </div>
+        </div>
+    </form> 
+  </div>
+
+<!--BOOTSTRAP AND JAVASCRIPT-->
+      <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript">
+    var sections = $('section')
+      , nav = $('nav')
+      , nav_height = nav.outerHeight();
+
+    $(window).on('scroll', function () {
+      var cur_pos = $(this).scrollTop();
+      
+      sections.each(function() {
+        var top = $(this).offset().top - nav_height,
+            bottom = top + $(this).outerHeight();
+        
+        if (cur_pos >= top && cur_pos <= bottom) {
+          nav.find('a').removeClass('active');
+          sections.removeClass('active');
+          
+          $(this).addClass('active');
+          nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+        }
+      });
+    });
+
+    nav.find('a').on('click', function () {
+      var $el = $(this)
+        , id = $el.attr('href');
+      
+      $('html, body').animate({
+        scrollTop: $(id).offset().top - nav_height
+      }, 500);
+      
+      return false;
+    });
+    </script>
+
+</body> 
 </html>
+    
+    
+    
