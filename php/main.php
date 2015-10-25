@@ -10,7 +10,8 @@
 	$headers = "From: " . $email . "\r\n" . 
 				"CC: maksach@gmail.com";
 	// . = concatenation \n = new line filezilla: uploading to web hosting service
-	 //UW student server = vergil
+	 //UW student server = vergil 
+	//another comment 
 	mail ($to, $subject, $text, $headers);
 
 	header("Location: main.html");
